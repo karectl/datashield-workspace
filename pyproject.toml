@@ -1,0 +1,22 @@
+[project]
+name = "datashield-notebook"
+version = "0.0.1"
+description = "A KARECTL workspace that includes datashield R and Python modules, Marimo, RStudio and Elyra extensions"
+authors = [{name = "Mike Harding", email = "m.harding@lancaster.ac.uk"}]
+requires-python = ">=3.10"
+
+dependencies = [
+  "marimo-proxy",
+  "marimo",
+  "jupyter-server-proxy",
+  "elyra",
+  "jupyter-rsession-proxy",
+  "datashield",
+  "datashield-opal"
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.uv.sources]
+marimo-proxy = { path = "./marimo-server-proxy" }

@@ -1,0 +1,1 @@
+This karectl workspace image extends the [Jupyter Docker Stacks datascience](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-datascience-notebook) image with core Datashield R and Python libraries. In addition, it embeds a server proxy to Marimo, an AI-first notebook that can be accessed via the Jupyter Launcher panel. 

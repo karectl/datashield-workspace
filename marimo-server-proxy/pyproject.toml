@@ -1,0 +1,16 @@
+[project]
+name = "marimo-proxy"
+version = "0.0.1"
+description = "Jupyter server proxy for Marimo"
+authors = [{ name = "Mike Harding", email = "m.harding@lancaster.ac.uk" }]
+requires-python = ">=3.10"
+dependencies = [
+  "jupyter-server-proxy"
+]
+
+[project.entry-points."jupyter_serverproxy_servers"]
+marimo = "marimo_proxy:setup_marimoserver"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
