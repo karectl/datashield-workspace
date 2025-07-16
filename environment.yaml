@@ -1,0 +1,8 @@
+name: base
+channels:
+  - conda-forge
+  - defaults
+  - r
+dependencies:
+  - r-nloptr 
+  - r-base
