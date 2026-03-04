@@ -16,7 +16,8 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libblas-dev \
     gfortran \
     cmake \
-    r-base-dev
+    r-base-dev \
+    libglpk-dev libnode-dev librsvg2-dev libx11-dev
 
 COPY environment.yaml environment.yaml
 
@@ -41,7 +42,7 @@ RUN wget -q https://s3.amazonaws.com/rstudio-ide-build/server/jammy/${TARGETARCH
 ENV KMP_AFFINITY=disabled
 
 # Datashield R packages
-RUN R -e "install.packages(c('DSI', 'DSOpal', 'remotes'), repos = 'https://cloud.r-project.org')" && \
+RUN R -e "install.packages(c('DSI', 'DSOpal', 'remotes', 'pak', 'usethis'), repos = 'https://cloud.r-project.org')" && \
     R -e "install.packages(c('nloptr', 'lme4', 'meta'), repos = 'https://cloud.r-project.org')" && \
     R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/panelaggregation/panelaggregation_0.1.1.tar.gz', repos = NULL, type = 'source')" && \
     R -e "remotes::install_github('datashield/dsBaseClient')"
