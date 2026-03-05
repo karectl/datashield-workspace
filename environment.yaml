@@ -6,3 +6,9 @@ channels:
 dependencies:
   - r-nloptr 
   - r-base
+  - r-rsvg
+  - librsvg
+  - cairo
+  - glib
+  - pkg-config
+  - libxml2

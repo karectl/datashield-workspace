@@ -42,7 +42,8 @@ RUN wget -q https://s3.amazonaws.com/rstudio-ide-build/server/jammy/${TARGETARCH
 ENV KMP_AFFINITY=disabled
 
 # Datashield R packages
-RUN R -e "install.packages(c('DSI', 'DSOpal', 'remotes', 'pak', 'usethis'), repos = 'https://cloud.r-project.org')" && \
+RUN R -e "install.packages(c('DSI', 'DSOpal', 'remotes', 'usethis'), repos = 'https://cloud.r-project.org')" && \
+    R -e "install.packages(c('pak'), repos = 'https://r-lib.github.io/p/pak/stable/')" && \
     R -e "install.packages(c('nloptr', 'lme4', 'meta'), repos = 'https://cloud.r-project.org')" && \
     R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/panelaggregation/panelaggregation_0.1.1.tar.gz', repos = NULL, type = 'source')" && \
     R -e "remotes::install_github('datashield/dsBaseClient')"
