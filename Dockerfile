@@ -59,8 +59,8 @@ WORKDIR /home/${NB_USER}
 USER ${NB_USER}
 
 # Defines an optional Makevars that allows R to compile packages using the system compilers instead of conda env compliers. This provides a workaround for R package compliation failures (e.g. rsvg) due to cross-complier errors within the conda environment.
-RUN mkdir -p /home/${NB_USER}/.R && touch /home/${NB_USER}/.R/Makevars.conda
-COPY --chown=${NB_USER}:${NB_USER} Makevars.system /home/${NB_USER}/.R/Makevars.system
+RUN touch /opt/conda/lib/R/etc/Makevars.conda
+COPY --chown=${NB_USER}:${NB_USER} Makevars.system /opt/conda/lib/R/etc/Makevars.system
 
 # Enable Jupyter proxy extensions
 # RUN jupyter server extension enable --py jupyter_server_proxy --sys-prefix && jupyter server extension enable elyra
