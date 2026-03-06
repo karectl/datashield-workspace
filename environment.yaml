@@ -1,14 +1,10 @@
 name: base
 channels:
   - conda-forge
-  - defaults
-  - r
 dependencies:
-  - r-nloptr 
   - r-base
+  - r-nloptr
   - r-rsvg
-  - librsvg
-  - cairo
-  - glib
-  - pkg-config
-  - libxml2
+  - r-diagrammersvg
+  - r-v8
+  - r-igraph

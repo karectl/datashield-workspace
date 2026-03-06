@@ -1,0 +1,8 @@
+CC = /usr/bin/gcc
+CXX = /usr/bin/g++
+CXX11 = /usr/bin/g++
+CXX14 = /usr/bin/g++
+CXX17 = /usr/bin/g++
+CC17 = /usr/bin/gcc
+CC90 = /usr/bin/gcc
+CC99 = /usr/bin/gcc
